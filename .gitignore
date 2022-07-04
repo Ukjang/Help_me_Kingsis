@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+멀티모달_Part_05/
 
 # C extensions
 *.so
