@@ -1,5 +1,5 @@
 from utils import CLOVA
-from konlpy import Okt
+from konlpy.tag import Okt
 
 def down_sample(input_wav, origin_sr, resample_sr):
     y, sr = librosa.load(input_wav, sr=origin_sr)

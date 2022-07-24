@@ -4,15 +4,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 import scipy.io as io
-
+from glob import glob
+import os
 from utils import Frontalize
 
 
 def draw_lipline_on_image(img, faces):
     face_size = 0
     num = 0
+    index = list(range(48, 68))
     for n, face in enumerate(faces):
-        if face.area() > face.size:
+        if face.area() > face_size:
             face_size = face.area()
             num = n
     landmark_model = dlib.shape_predictor('.\model\Lip_motion\shape_predictor_68_face_landmarks.dat')
@@ -57,15 +59,16 @@ def make_target_dir(video_name, selected_dir):
     except:
         video_cap.release()
 
-    select_frame = len(glob(selected_dir + '/*.jpg'))
-    if len(os.listdir('./data/test')) > len(select_frame):
-        while len(os.listdir('./data/test')) != len(select_frame):
+    select_frames = len(glob(selected_dir + '/*.jpg'))
+    if len(os.listdir('./data/test')) > select_frames:
+        while len(os.listdir('./data/test')) != select_frames:
             os.remove(f"./data/test/{cnt}.jpg")
             cnt -= 1
-    elif len(os.listdir('./data/test')) < len(select_frame):
-        while len(os.listdir('./data/test')) != len(select_frame):
+    elif len(os.listdir('./data/test')) < select_frames:
+        while len(os.listdir('./data/test')) != select_frames:
             gray_img = np.empty((240, 320), dtype=np.uint8)
-            cv2.imwrite('./data/test/' + '%d.jpg' % cnt, img)
+            cv2.imwrite('./data/test/' + '%d.jpg' % cnt, gray_img)
+            cnt += 1
     else:
         pass
 
@@ -73,31 +76,33 @@ def make_target_dir(video_name, selected_dir):
 def lip_motion_analysis(video_idx, target_dir, dir_lst):
     # video index directory 이미지 추출
     dir_index = dir_lst[video_idx]
-    dir_path = f'./data/Study_Dir/{dir_index}th_Dir/'
-    imgs = glob(dir_path+'*.jpg')
+    dir_path = f'./data/Study_Dir/{dir_index}th_Study_Dir/'
+    imgs = sorted(glob(dir_path+'*.jpg'), key=os.path.getctime)
     # 추출된 이미지를 정면화
     model3D = Frontalize.ThreeD_Model('./model/Lip_motion/model3Ddlib.mat', 'model_dlib')
     cnt = 0
+    try:
+        os.mkdir(f'./data/Study_Dir/{dir_index}th_Study_Dir/frontal')
+    except:
+        pass
+        print('Directory is already existed')
     for img in imgs:
-        cv.imread(dir_path + img, 1)
+        img = cv2.imread(img, 1)
         img = Frontalize.center_image(img, IMAGE_SIZE=300)
         lmarks = Frontalize.get_landmarks(img)
         proj_matrix, camera_matrix, rmat, tvec = Frontalize.estimate_camera(model3D, lmarks[0])
         eyemask = np.asarray(io.loadmat('./model/Lip_motion/eyemask.mat')['eyemask'])
-        frontal_raw, frontal_sym = Frontalize.frontalize(img, proj_matrix, ref_U, eyemask)
-
-        try:
-            os.mkdir(f'./data/Study_Dir/{dir_index}th_Dir/frontal')
-        except:
-            pass
-            print('Directory is already existed')
+        frontal_raw, frontal_sym = Frontalize.frontalize(img, proj_matrix, model3D.ref_U, eyemask)
 
         new_img = frontal_sym[:,:,::-1]
-        cv.imwrite(f'./data/Study_Dir/{dir_index}th_Dir/frontal/' + '%d.jpg' %cnt, new_img)
+        # error 발생 시, 기존의 img로 저장
+        # 현재 색상과 사이즈를 바꾸는 것을 기존 색상과 사이즈로 저장하도록 변경
+        cv2.imwrite(f'./data/Study_Dir/{dir_index}th_Study_Dir/frontal/' + '%d.jpg' %cnt, new_img)
         cnt += 1
+
     # 정면화된 이미지에서 입술 랜드마크 검출
     index = list(range(48, 68))
-    taget_frames = sorted(glob(f'./data/Study_Dir/{dir_index}th_Dir/frontal/' + '*.jpg'), keys=os.path.getctime)
+    target_frames = sorted(glob(f'./data/Study_Dir/{dir_index}th_Study_Dir/frontal/' + '*.jpg'), key=os.path.getctime)
     lip_point_target = []
     for frame in target_frames:
         img = cv2.imread(frame)
@@ -115,7 +120,7 @@ def lip_motion_analysis(video_idx, target_dir, dir_lst):
 
     # 사용자 프레임 이미지에서 입술 랜드마크 검출
     frame_lst = sorted(glob(target_dir + '/*.jpg'), key=os.path.getctime)
-    iip_point_test = []
+    lip_point_test = []
 
     for frame in frame_lst:
         img = cv2.imread(frame)
@@ -136,12 +141,12 @@ def lip_motion_analysis(video_idx, target_dir, dir_lst):
         lip_point_test = np.array(lip_point_test)
 
         sum_lst = []
-        for o, t in zip(iip_point_target, iip_point_test):
+        for o, t in zip(lip_point_target, lip_point_test):
             try:
                 sum_lst.append(np.square(o - t))
-                score = math.sqrt(np.sum(sum_lst) / len(sum_lst))
             except:
                 pass
+        score = math.sqrt(np.sum(sum_lst) / len(sum_lst))
         print(f'입술 분석 결과: {score}')
     else:
         print('원본 영상과 학습자 영상의 프레임 수가 일치하지 않습니다.')

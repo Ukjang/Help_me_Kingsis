@@ -1,5 +1,11 @@
 import json
 import cv2
+import os
+import re
+import pandas as pd
+from collections import Counter
+from glob import glob
+import dlib
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 
 from utils import CLOVA
@@ -7,23 +13,23 @@ from utils import Lip_motion
 
 def contents_select(filepath, video_name, exist=True):
     if exist==True:
-        json_object = json.load(filepath + video_name + '.json')
+        json_object = json.load(open(filepath + video_name + '.json', encoding='utf-8'))
         json_dialogue = json_object['dialogue_infos']
 
         st_time = {}
-        for idx, dialog in enumerate(json_dialouge):
+        for idx, dialog in enumerate(json_dialogue):
             st_time[idx] = dialog['start_time']
         sort_time = sorted(st_time.items(), key = lambda item: item[1])
         sort_time = [i[0] for i in sort_time]
-        json_dialouge = [json_dialouge[i] for i in sort_time]
+        json_dialogue = [json_dialogue[i] for i in sort_time]
 
         script_lst = []
         script = ''
 
-        for dialouge in json_dialouge:
-            script = dialouge['utterance']
+        for dialogue in json_dialogue:
+            script = dialogue['utterance']
             script = re.sub(r'[^0-9a-zA-Zㄱ-ㅣ가-힣]', '', script)
-            script_ls.append(script)
+            script_lst.append(script)
         
         script_len = len(script_lst)
 
@@ -45,16 +51,16 @@ def contents_select(filepath, video_name, exist=True):
                 df = pd.DataFrame(lst)
                 acc = df.isna().sum(axis=1)[0] / len(Counter(sc))
                 if acc < 5:                                         # 정확도 95% 이상인 대본만 추출
-                    valid_video_lst.append(i)
+                    validation_lst.append(i)
     else:
         for stt in stt_lst:
             i += 1
             if len(stt) >= 10:
-                valid_video_lst.append(i)
+                validation_lst.append(i)
     if exist==True:
-        return valid_lst, json_dialogue
+        return validation_lst, json_dialogue
     else:
-        return valid_lst, json_object
+        return validation_lst, json_object
 
 # script = json_dialogue
 def create_study_dir(video_name, lst, dialogue=None, object=None, exist=True):
@@ -131,5 +137,5 @@ def create_study_dir(video_name, lst, dialogue=None, object=None, exist=True):
                     lets_study_lip_point_lst.append(lip_point_lst)
                     print(f"{i}번 영상은 Let's study 학습 자료로 활용 가능합니다.")
                 
-        print('영상 확인 완료:', lets_study, '학습 가능')
-        return lets_study, lets_study_lip_point_lst
+    print('영상 확인 완료:', lets_study, '학습 가능')
+    return lets_study, lets_study_lip_point_lst

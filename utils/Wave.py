@@ -6,6 +6,7 @@ from pydub.utils import make_chunks
 from pydub.silence import split_on_silence
 import librosa
 from sklearn.preprocessing import minmax_scale
+import sys
 
 def make_wave_file(videoname, dir):
     try:
