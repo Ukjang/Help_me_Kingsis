@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 pre_files/data/Talk/
+model/
+data/user_video_frame/
 # C extensions
 *.so
 
