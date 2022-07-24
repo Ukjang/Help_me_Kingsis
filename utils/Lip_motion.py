@@ -15,7 +15,7 @@ def draw_lipline_on_image(img, faces):
         if face.area() > face.size:
             face_size = face.area()
             num = n
-    landmark_model = dlib.shape_predictor('..\model\Lip_motion\shape_predictor_68_face_landmarks.dat')
+    landmark_model = dlib.shape_predictor('.\model\Lip_motion\shape_predictor_68_face_landmarks.dat')
     lm = landmark_model(img, faces[num])
     lm_point = [[p.x, p.y] for p in lm.parts()]
     lm_point = np.array(lm_point)
@@ -42,30 +42,30 @@ def procrustes_analysis(lip_point):
     return lip_point_scaling
 
 def make_target_dir(video_name, selected_dir):
-    video_cap = cv2.VideoCapture('../data/' + video_name + '.mp4')
+    video_cap = cv2.VideoCapture('./data/' + video_name + '.mp4')
     cnt = 0
     try:
-        os.mkdir('../data/test')
+        os.mkdir('./data/test')
     except:
         pass
         print('Directory is already existed')
     try:
         while video_cap.isOpened():
             ret, img = video_cap.read()
-            cv2.imwrite('../data/test/' + '%d.jpg' % cnt, img)
+            cv2.imwrite('./data/test/' + '%d.jpg' % cnt, img)
             cnt += 1
     except:
         video_cap.release()
 
     select_frame = len(glob(selected_dir + '/*.jpg'))
-    if len(os.listdir('../data/test')) > len(select_frame):
-        while len(os.listdir('../data/test')) != len(select_frame):
-            os.remove(f"../data/test/{cnt}.jpg")
+    if len(os.listdir('./data/test')) > len(select_frame):
+        while len(os.listdir('./data/test')) != len(select_frame):
+            os.remove(f"./data/test/{cnt}.jpg")
             cnt -= 1
-    elif len(os.listdir('../data/test')) < len(select_frame):
-        while len(os.listdir('../data/test')) != len(select_frame):
+    elif len(os.listdir('./data/test')) < len(select_frame):
+        while len(os.listdir('./data/test')) != len(select_frame):
             gray_img = np.empty((240, 320), dtype=np.uint8)
-            cv2.imwrite('../data/test/' + '%d.jpg' % cnt, img)
+            cv2.imwrite('./data/test/' + '%d.jpg' % cnt, img)
     else:
         pass
 
@@ -76,28 +76,28 @@ def lip_motion_analysis(video_idx, target_dir, dir_lst):
     dir_path = f'./data/Study_Dir/{dir_index}th_Dir/'
     imgs = glob(dir_path+'*.jpg')
     # 추출된 이미지를 정면화
-    model3D = Frontalize.ThreeD_Model('../model/Lip_motion/model3Ddlib.mat', 'model_dlib')
+    model3D = Frontalize.ThreeD_Model('./model/Lip_motion/model3Ddlib.mat', 'model_dlib')
     cnt = 0
     for img in imgs:
         cv.imread(dir_path + img, 1)
         img = Frontalize.center_image(img, IMAGE_SIZE=300)
         lmarks = Frontalize.get_landmarks(img)
         proj_matrix, camera_matrix, rmat, tvec = Frontalize.estimate_camera(model3D, lmarks[0])
-        eyemask = np.asarray(io.loadmat('../model/Lip_motion/eyemask.mat')['eyemask'])
+        eyemask = np.asarray(io.loadmat('./model/Lip_motion/eyemask.mat')['eyemask'])
         frontal_raw, frontal_sym = Frontalize.frontalize(img, proj_matrix, ref_U, eyemask)
 
         try:
-            os.mkdir(f'../data/Study_Dir/{dir_index}th_Dir/frontal')
+            os.mkdir(f'./data/Study_Dir/{dir_index}th_Dir/frontal')
         except:
             pass
             print('Directory is already existed')
 
         new_img = frontal_sym[:,:,::-1]
-        cv.imwrite(f'../data/Study_Dir/{dir_index}th_Dir/frontal/' + '%d.jpg' %cnt, new_img)
+        cv.imwrite(f'./data/Study_Dir/{dir_index}th_Dir/frontal/' + '%d.jpg' %cnt, new_img)
         cnt += 1
     # 정면화된 이미지에서 입술 랜드마크 검출
     index = list(range(48, 68))
-    taget_frames = sorted(glob(f'../data/Study_Dir/{dir_index}th_Dir/frontal/' + '*.jpg'), keys=os.path.getctime)
+    taget_frames = sorted(glob(f'./data/Study_Dir/{dir_index}th_Dir/frontal/' + '*.jpg'), keys=os.path.getctime)
     lip_point_target = []
     for frame in target_frames:
         img = cv2.imread(frame)
