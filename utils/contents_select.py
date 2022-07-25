@@ -5,11 +5,11 @@ import re
 import pandas as pd
 from collections import Counter
 from glob import glob
+import numpy as np
 import dlib
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 
 from utils import CLOVA
-from utils import Lip_motion
 
 def contents_select(filepath, video_name, exist=True):
     if exist==True:
@@ -112,6 +112,7 @@ def create_study_dir(video_name, lst, dialogue=None, object=None, exist=True):
         lip_index = list(range(48, 68))
         lip_point_lst = []
         lip_cnt = 0
+        index = list(range(48, 68))
 
         for fidx, frame in enumerate(frame_lst):
             img = cv2.imread(frame)
@@ -129,7 +130,17 @@ def create_study_dir(video_name, lst, dialogue=None, object=None, exist=True):
                     break
 
             else:
-                lm_point, lip_point = Lip_motion.draw_lipline_on_image(img, faces)
+                face_size = 0
+                num = 0
+                for n, face in enumerate(faces):
+                    if face.area() > face_size:
+                        face_size = face.area()
+                        num = n
+                landmark_model = dlib.shape_predictor('./model/Lip_motion/shape_predictor_68_face_landmarks.dat')
+                lm = landmark_model(img, faces[num])
+                lm_point = [[p.x, p.y] for p in lm.parts()]
+                lm_point = np.array(lm_point)
+                lip_point = [tuple(lm_point[index][i]) for i in range(len(index))]
                 valid_frame_lst.append(fidx)
                 lip_point_lst.append(lip_point)
                 if fidx + 1 == len(frame_lst):
