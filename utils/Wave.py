@@ -7,16 +7,18 @@ from pydub.silence import split_on_silence
 import librosa
 from sklearn.preprocessing import minmax_scale
 import sys
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.interpolate import make_interp_spline, BSpline
 
-def make_wave_file(videoname, dir):
+def make_wave_file(videoname, directory):
     try:
         os.mkdir('./data/Audio')
     except:
         print('Directory is already existed')
         pass
-
-    audiosegment = AudioSegment.from_file(dir+videoname+'.mp4')
-    audiosegment.export(dir+videoname+'.wav', format='wav')
+    audiosegment = AudioSegment.from_file(directory + videoname+'.mp4')
+    audiosegment.export('./data/Audio/' +videoname +'.wav', format='wav')
 
 # sound is original video to wav file
 def detect_leading_silence(sound, silence_threshold=-40.0, chunk_size=10):
@@ -79,7 +81,7 @@ def MFCC(source, target, export_dir):
 
         dBFS = trimmed_sound.dBFS
 
-        chunks = split_on_silence(trimmed_sound, min_slience_len=1000, silence_thresh=dBFS-16)
+        chunks = split_on_silence(trimmed_sound, min_silence_len=1000, silence_thresh=dBFS-16)
 
         for chunk in chunks:
             silence_chunk = AudioSegment.silent(duration=1000)
@@ -116,6 +118,25 @@ def MFCC(source, target, export_dir):
     plt.plot(B + offset)
     for (x1, x2) in path:
         plt.plot([x1, x2], [A[x1], B[x2] + offset])
+    plt.show()
+
+    x = np.array(range(len(mfcc_system.mean(axis=0))))
+    y = np.array(mfcc_system.mean(axis=0).tolist())
+
+    x1 = np.array(range(len(mfcc_user.mean(axis=0))))
+    y1 = np.array(mfcc_user.mean(axis=0).tolist())
+
+    xnew = np.linspace(x.min(), x.max(), 200)
+    xnew1 = np.linspace(x1.min(), x1.max(), 200)  
+
+    spl = make_interp_spline(x, y, k=7)
+    y_smooth = spl(xnew)
+    spl1 = make_interp_spline(x1, y1, k=7)
+    y_smooth1 = spl1(xnew1)
+
+    plt.plot(xnew, y_smooth)
+    plt.plot(xnew1, y_smooth1)
+    plt.ylim([0,1])
     plt.show()
 
     return mfcc_score

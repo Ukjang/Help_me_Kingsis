@@ -1,5 +1,10 @@
 from utils import CLOVA
 from konlpy.tag import Okt
+import librosa
+import soundfile as sf
+import urllib3
+import json
+import base64
 
 def down_sample(input_wav, origin_sr, resample_sr):
     y, sr = librosa.load(input_wav, sr=origin_sr)
@@ -11,13 +16,13 @@ def down_sample(input_wav, origin_sr, resample_sr):
 def text_recognition(source, target):
     # System Video to STT
 
-    res = ClovaSpeechClient().req_upload(file=source, completion='sync')
+    res = CLOVA.ClovaSpeechClient().req_upload(file=source, completion='sync')
     json_object = res.json()
     system_text = json_object['segments'][0]['text']
 
     # User Video to STT
 
-    res = ClovaSpeechClient().req_upload(file=target, completion='sync')
+    res = CLOVA.ClovaSpeechClient().req_upload(file=target, completion='sync')
     json_object = res.json()
     user_text = json_object['segments'][0]['text']
 
@@ -46,21 +51,20 @@ def text_recognition(source, target):
             cnt += 1
 
     if (cnt/total) > 1.0:
-        return print(1.0), system_text
+        return print(1.0), system_text, user_text
     else:
-        return print(cnt/total), system_text
+        return cnt/total, system_text, user_text
 
 def prounce_score(audiofile, system_text):
-    data = './data/Audio/user_audio.wav'
+    data = './data/Audio/api_user_audio.wav'
     down_sample(data, 22050, 16000)
 
     openApiURL = "http://aiopen.etri.re.kr:8000/WiseASR/PronunciationKor"
     accessKey = "b2a87f6e-d634-4a4d-8a2a-4e166dd94560"
-    audioFilePath = "Audio/pronoun.wav"
     languageCode = "korean"
     script = system_text
 
-    file = open(audioFilePath, "rb")
+    file = open(audiofile, "rb")
     audioContents = base64.b64encode(file.read()).decode("utf8")
     file.close()
 
