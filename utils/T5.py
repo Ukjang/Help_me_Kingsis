@@ -2,7 +2,7 @@ from transformers import T5Tokenizer, TFMT5ForConditionalGeneration
 from torch import cuda
 
 t5_tokenizer = T5Tokenizer.from_pretrained('google/mt5-small')
-t5_model = TFMT5ForConditionalGeneration.from_pretrained('/content/drive/MyDrive/models/model_files/', from_pt=True)
+t5_model = TFMT5ForConditionalGeneration.from_pretrained('./model/T5/', from_pt=True)
 
 def sentence_generate(text, model=t5_model, tokenizer=t5_tokenizer):
     device = 'cuda' if cuda.is_available() else 'cpu'
