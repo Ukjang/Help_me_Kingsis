@@ -8,6 +8,8 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
 import gluonnlp as nlp
+import pandas as pd
+import numpy as np
 
 model, vocab = get_pytorch_kobert_model()
 
@@ -57,7 +59,7 @@ class BERTClassifier(nn.Module):
 
 ####################################################
 
-def kobert_sent(text, vocab, model_path):
+def kobert_sent(text, vocab, model, model_path):
 
   device = torch.device("cuda:0")
   tokenizer = get_tokenizer()
@@ -86,9 +88,10 @@ def kobert_sent(text, vocab, model_path):
   unseen_test = pd.DataFrame([[test_sentence, 5]], columns = [['text', 'label']])
   unseen_values = unseen_test.values
   test_set = BERTDataset(unseen_values, 0, 1, tok, max_len, True, False)
-  test_input = torch.utils.data.DataLoader(test_set, batch_size=1, num_workers=2)
+  test_input = torch.utils.data.DataLoader(test_set, batch_size=1, num_workers=0)
 
   #load_model
+  model = model
   model = torch.load(model_path)
 
 

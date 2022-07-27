@@ -7,7 +7,10 @@ import webcolors
 from mmcv import Config, DictAction
 from model.mmaction2.mmaction.apis import inference_recognizer, init_recognizer
 
-def TimeSformer(video, config='./model/mmactions2/configs/recognition/timesformer/timesformer_divST_8x32x1_15e_kinetics400_rgb.py', checkpoint='./model/mmactions2/checkpoints/timesformer_divST_8x32x1_15e_kinetics400_rgb-3f8e5d03.pth', label='./model/mmactions2/tools/data/kinetics/label_map_k400.txt' ):
+config_path = './model/mmactions2/configs/recognition/timesformer/timesformer_divST_8x32x1_15e_kinetics400_rgb.py'
+checkpoint_path = './model/mmactions2/checkpoints/timesformer_divST_8x32x1_15e_kinetics400_rgb-3f8e5d03.pth'
+label_path = './model/mmactions2/tools/data/kinetics/label_map_k400.txt' 
+def TimeSformer(video, config=config_path, checkpoint=checkpoint_path, label=label_path):
     
     device = torch.device('cuda:0')
 

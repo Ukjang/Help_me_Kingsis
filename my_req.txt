@@ -53,3 +53,7 @@ tqdm==4.64.0
 transformers==4.20.1
 urllib3==1.25.11
 webcolors==1.12
+
+gluonnlp==0.10.0
+mxnet==1.9.1
+onnxruntime==1.8.0
