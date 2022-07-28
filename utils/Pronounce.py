@@ -18,14 +18,18 @@ def text_recognition(source, target):
 
     res = CLOVA.ClovaSpeechClient().req_upload(file=source, completion='sync')
     json_object = res.json()
-    system_text = json_object['segments'][0]['text']
+    system_text = ''
+    for seg in json_object['segments']:
+        system_text += seg['text']
 
     # User Video to STT
 
     res = CLOVA.ClovaSpeechClient().req_upload(file=target, completion='sync')
     json_object = res.json()
-    user_text = json_object['segments'][0]['text']
-
+    user_text = ''
+    for seg in json_object['segments']:
+        user_text += seg['text']
+        
     # Comparison with System and User
 
     tagger = Okt()

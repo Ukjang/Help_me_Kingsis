@@ -120,23 +120,10 @@ def MFCC(source, target, export_dir):
         plt.plot([x1, x2], [A[x1], B[x2] + offset])
     plt.show()
 
-    x = np.array(range(len(mfcc_system.mean(axis=0))))
-    y = np.array(mfcc_system.mean(axis=0).tolist())
+    x_sys = np.array(range(len(mfcc_system.mean(axis=0))))
+    y_sys = np.array(mfcc_system.mean(axis=0).tolist())
 
-    x1 = np.array(range(len(mfcc_user.mean(axis=0))))
-    y1 = np.array(mfcc_user.mean(axis=0).tolist())
+    x_user = np.array(range(len(mfcc_user.mean(axis=0))))
+    y_user = np.array(mfcc_user.mean(axis=0).tolist())
 
-    xnew = np.linspace(x.min(), x.max(), 200)
-    xnew1 = np.linspace(x1.min(), x1.max(), 200)  
-
-    spl = make_interp_spline(x, y, k=7)
-    y_smooth = spl(xnew)
-    spl1 = make_interp_spline(x1, y1, k=7)
-    y_smooth1 = spl1(xnew1)
-
-    plt.plot(xnew, y_smooth)
-    plt.plot(xnew1, y_smooth1)
-    plt.ylim([0,1])
-    plt.show()
-
-    return mfcc_score
+    return mfcc_score, x_sys, y_sys, x_user, y_user 

@@ -119,15 +119,15 @@ def lip_motion_analysis(video_idx, target_dir, dir_lst):
     # 정면화된 이미지에서 입술 랜드마크 검출
     target_frames = sorted(glob(f'./data/Study_Dir/{dir_index}th_Study_Dir/frontal/' + '*.jpg'), key=os.path.getctime)
     lip_point_target = []
-    for frame in target_frames:
-        lip_point = extraction_lip_point(frame)
+    for i in range(0, len(target_frames), 10):
+        lip_point = extraction_lip_point(target_frames[i])
         lip_point_target.append(lip_point)
 
     # 사용자 프레임 이미지에서 입술 랜드마크 검출
     frame_lst = sorted(glob(target_dir + '/*.jpg'), key=os.path.getctime)
     lip_point_test = []
-    for frame in frame_lst:
-        lip_point = extraction_lip_point(frame)
+    for i in range(0, len(frame_lst), 10):
+        lip_point = extraction_lip_point(frame_lst[i])
         lip_point_test.append(lip_point)
 
     # 좌표 차이값 계산
@@ -135,16 +135,20 @@ def lip_motion_analysis(video_idx, target_dir, dir_lst):
         print('원본 영상과 학습자 영상의 프레임 수가 일치합니다.')
         lip_point_target = np.array(lip_point_target)
         lip_point_test = np.array(lip_point_test)
-
         sum_lst = []
         for target, test in zip(lip_point_target, lip_point_test):
             try:
-                sum_lst.append(np.square(target - test))
+                frame_score_lst = []
+                frame_score = np.square(target - test)
+                for point in frame_score:
+                    point_score = np.sqrt(np.sum(point))
+                    frame_score_lst.append(point_score)
+                sum_lst.append(np.sum(frame_score_lst)/len(frame_score_lst))
             except:
                 pass
-        score = math.sqrt(np.sum(sum_lst) / len(sum_lst))
+        score = (np.sum(sum_lst))/(len(sum_lst))
         print(f'입술 분석 결과: {score}')
     else:
         print('원본 영상과 학습자 영상의 프레임 수가 일치하지 않습니다.')
     
-    return score
+    return score, frame_score_lst
