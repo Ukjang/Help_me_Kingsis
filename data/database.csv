@@ -1,0 +1,118 @@
+video,big_sent,sm_sent,action
+KETI_MULTIMODAL_0000000307,"['Happy', 'Rage', 'Happy', 'Sadness']","['Confident', 'Rage', 'Happy', 'Disappointed']",driving car
+KETI_MULTIMODAL_0000000298,"['Happy', 'Rage', 'Hurt']","['Confident', 'Annoying', 'Hurt']",texting
+KETI_MULTIMODAL_0000000308,"['Happy', 'Rage', 'Rage', 'Rage', 'Rage']","['Confident', 'Rage', 'Rage', 'Rage', 'Rage']",crying
+KETI_MULTIMODAL_0000000299,"['Rage', 'Emberrassed', 'Rage', 'Hurt', 'Rage', 'Happy', 'Rage', 'Hurt']","['Rage', 'Guilty', 'Rage', 'Hurt', 'Rage', 'Comfortable', 'Grumbling', 'Hurt']",kissing
+KETI_MULTIMODAL_0000000304,"['Happy', 'Rage', 'Rage', 'Rage', 'Rage']","['Happy', 'Rage', 'Annoying', 'Rage', 'Rage']",kissing
+KETI_MULTIMODAL_0000000310,"['Rage', 'Rage', 'Happy']","['Rage', 'Rage', 'Confident']",playing monopoly
+KETI_MULTIMODAL_0000000303,"['Hurt', 'Sadness', 'Sadness', 'Hurt', 'Emberrassed', 'Rage', 'Happy']","['Hurt', 'Regretful', 'Pessimistic', 'Envy', 'Guilty', 'Rage', 'Confident']",kissing
+KETI_MULTIMODAL_0000000305,"['Anxiety', 'Happy', 'Rage', 'Rage', 'Rage', 'Rage', 'Sadness']","['Scared', 'Grateful', 'Rage', 'Grumbling', 'Rage', 'Rage', 'Gloomy']",singing
+KETI_MULTIMODAL_0000000309,"['Happy', 'Rage', 'Happy', 'Rage', 'Happy']","['Comfortable', 'Annoying', 'Confident', 'Rage', 'Happy']",barbequing
+KETI_MULTIMODAL_0000000302,"['Rage', 'Emberrassed', 'Happy', 'Rage', 'Happy']","['Rage', 'Guilty', 'Happy', 'Rage', 'Happy']",cleaning shoes
+KETI_MULTIMODAL_0000000322,"['Sadness', 'Happy', 'Happy']","['Disappointed', 'Happy', 'Happy']",tasting food
+KETI_MULTIMODAL_0000000324,"['Happy', 'Rage', 'Rage']","['Happy', 'Rage', 'Rage']",setting table
+KETI_MULTIMODAL_0000000318,"['Rage', 'Sadness', 'Emberrassed', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage']","['Rage', 'Pessimistic', 'Inferiority', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage']",kissing
+KETI_MULTIMODAL_0000000320,"['Rage', 'Rage']","['Rage', 'Rage']",sharpening pencil
+KETI_MULTIMODAL_0000000321,"['Rage', 'Anxiety', 'Happy', 'Happy', 'Emberrassed', 'Rage', 'Rage', 'Rage', 'Rage']","['Rage', 'Anxiety', 'Confident', 'Confident', 'Inferiority', 'Rage', 'Rage', 'Rage', 'Annoying']",singing
+KETI_MULTIMODAL_0000000323,"['Rage', 'Rage', 'Anxiety']","['Rage', 'Annoying', 'Anxiety']",testifying
+KETI_MULTIMODAL_0000000315,"['Rage', 'Sadness']","['Rage', 'Pessimistic']",using computer
+KETI_MULTIMODAL_0000000311,"['Happy', 'Rage', 'Emberrassed']","['Happy', 'Rage', 'Guilty']",tasting food
+KETI_MULTIMODAL_0000000316,"['Sadness', 'Rage', 'Happy', 'Anxiety', 'Sadness', 'Anxiety']","['Pessimistic', 'Rage', 'Confident', 'Anxiety', 'Sadness', 'Scared']",throwing axe
+KETI_MULTIMODAL_0000000319,"['Hurt', 'Hurt']","['Hurt', 'Unfair']",reading book
+KETI_MULTIMODAL_0000000343,"['Sadness', 'Emberrassed', 'Anxiety', 'Rage', 'Rage', 'Rage']","['Pessimistic', 'Inferiority', 'Anxiety', 'Rage', 'Rage', 'Rage']",tasting food
+KETI_MULTIMODAL_0000000333,"['Rage', 'Sadness', 'Happy']","['Rage', 'Gloomy', 'Happy']",texting
+KETI_MULTIMODAL_0000000327,"['Happy', 'Emberrassed', 'Rage', 'Rage', 'Anxiety', 'Rage', 'Anxiety', 'Rage']","['Comfortable', 'Guilty', 'Rage', 'Annoying', 'Anxiety', 'Rage', 'Anxiety', 'Rage']",washing feet
+KETI_MULTIMODAL_0000000334,"['Rage', 'Hurt', 'Rage']","['Rage', 'Unfair', 'Rage']",crying
+KETI_MULTIMODAL_0000000340,"['Happy', 'Anxiety', 'Rage', 'Rage', 'Rage', 'Happy', 'Happy', 'Happy', 'Rage', 'Rage', 'Emberrassed', 'Happy', 'Happy', 'Happy']","['Happy', 'Stressed', 'Rage', 'Rage', 'Rage', 'Happy', 'Comfortable', 'Happy', 'Rage', 'Rage', 'Guilty', 'Happy', 'Confident', 'Happy']",crying
+KETI_MULTIMODAL_0000000325,"['Anxiety', 'Happy', 'Rage']","['Scared', 'Happy', 'Annoying']",dining
+KETI_MULTIMODAL_0000000345,"['Anxiety', 'Anxiety', 'Hurt', 'Rage', 'Rage', 'Rage', 'Rage', 'Anxiety']","['Baffling', 'Baffling', 'Unfair', 'Annoying', 'Rage', 'Rage', 'Annoying', 'Baffling']",reading book
+KETI_MULTIMODAL_0000000342,"['Rage', 'Anxiety', 'Happy', 'Rage', 'Sadness', 'Emberrassed', 'Sadness', 'Hurt', 'Hurt', 'Rage', 'Rage', 'Happy', 'Rage', 'Happy', 'Rage', 'Rage', 'Rage', 'Rage', 'Happy']","['Rage', 'Scared', 'Confident', 'Rage', 'Regretful', 'Guilty', 'Disappointed', 'Envy', 'Envy', 'Rage', 'Rage', 'Comfortable', 'Rage', 'Happy', 'Grumbling', 'Rage', 'Rage', 'Annoying', 'Confident']",using computer
+KETI_MULTIMODAL_0000000326,"['Rage', 'Rage', 'Rage']","['Rage', 'Rage', 'Rage']",setting table
+KETI_MULTIMODAL_0000000344,"['Rage', 'Sadness', 'Rage', 'Rage']","['Rage', 'Pessimistic', 'Rage', 'Rage']",using computer
+KETI_MULTIMODAL_0000000354,"['Rage', 'Rage', 'Rage', 'Rage']","['Rage', 'Rage', 'Grumbling', 'Rage']",kissing
+KETI_MULTIMODAL_0000000349,"['Hurt', 'Happy', 'Rage', 'Rage', 'Happy', 'Hurt', 'Anxiety', 'Happy', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Hurt', 'Rage', 'Happy', 'Happy', 'Rage', 'Happy', 'Emberrassed', 'Rage']","['Unfair', 'Grateful', 'Rage', 'Rage', 'Happy', 'Hurt', 'Scared', 'Happy', 'Rage', 'Grumbling', 'Rage', 'Rage', 'Annoying', 'Unfair', 'Rage', 'Happy', 'Grateful', 'Rage', 'Happy', 'Emberrassed', 'Rage']",shredding paper
+KETI_MULTIMODAL_0000000353,"['Rage', 'Sadness', 'Rage', 'Sadness', 'Rage', 'Rage', 'Rage', 'Hurt', 'Happy']","['Rage', 'Disappointed', 'Rage', 'Regretful', 'Annoying', 'Rage', 'Rage', 'Hurt', 'Happy']",yawning
+KETI_MULTIMODAL_0000000357,"['Rage', 'Rage', 'Happy', 'Rage']","['Rage', 'Rage', 'Happy', 'Rage']",hugging
+KETI_MULTIMODAL_0000000347,"['Happy', 'Rage', 'Rage']","['Happy', 'Grumbling', 'Rage']",shaking hands
+KETI_MULTIMODAL_0000000350,"['Happy', 'Rage', 'Happy', 'Happy']","['Grateful', 'Rage', 'Confident', 'Happy']",answering questions
+KETI_MULTIMODAL_0000000355,"['Rage', 'Anxiety']","['Rage', 'Scared']",crying
+KETI_MULTIMODAL_0000000358,"['Rage', 'Happy', 'Rage', 'Hurt', 'Rage']","['Rage', 'Confident', 'Rage', 'Envy', 'Rage']",crying
+KETI_MULTIMODAL_0000000356,"['Happy', 'Rage', 'Happy', 'Rage']","['Happy', 'Rage', 'Happy', 'Rage']",fixing hair
+KETI_MULTIMODAL_0000000346,"['Anxiety', 'Rage']","['Anxiety', 'Grumbling']",texting
+KETI_MULTIMODAL_0000000359,"['Rage', 'Anxiety', 'Rage', 'Rage', 'Sadness', 'Anxiety', 'Rage', 'Rage', 'Rage', 'Rage', 'Emberrassed', 'Rage', 'Rage', 'Happy', 'Happy', 'Anxiety', 'Rage', 'Rage']","['Rage', 'Anxiety', 'Rage', 'Rage', 'Pessimistic', 'Anxiety', 'Annoying', 'Rage', 'Annoying', 'Annoying', 'Guilty', 'Rage', 'Rage', 'Happy', 'Happy', 'Anxiety', 'Grumbling', 'Rage']",punching person (boxing)
+KETI_MULTIMODAL_0000000367,"['Hurt', 'Anxiety', 'Happy', 'Rage', 'Happy', 'Rage', 'Sadness', 'Happy']","['Envy', 'Scared', 'Confident', 'Rage', 'Happy', 'Rage', 'Sadness', 'Confident']",crying
+KETI_MULTIMODAL_0000000366,"['Rage', 'Rage', 'Rage', 'Rage', 'Sadness', 'Rage']","['Rage', 'Rage', 'Rage', 'Rage', 'Pessimistic', 'Rage']",testifying
+KETI_MULTIMODAL_0000000364,"['Happy', 'Happy', 'Rage', 'Rage', 'Rage', 'Emberrassed']","['Happy', 'Happy', 'Rage', 'Rage', 'Rage', 'Guilty']",shaking hands
+KETI_MULTIMODAL_0000000365,"['Rage', 'Rage', 'Rage', 'Hurt', 'Rage']","['Rage', 'Rage', 'Rage', 'Shocked', 'Rage']",fixing hair
+KETI_MULTIMODAL_0000000362,"['Hurt', 'Emberrassed', 'Anxiety', 'Rage', 'Rage']","['Hurt', 'Inferiority', 'Scared', 'Rage', 'Rage']",tai chi
+KETI_MULTIMODAL_0000000361,"['Hurt', 'Anxiety', 'Rage', 'Happy', 'Rage']","['Unfair', 'Scared', 'Grumbling', 'Comfortable', 'Rage']",crying
+KETI_MULTIMODAL_0000000363,"['Rage', 'Rage', 'Rage', 'Rage']","['Annoying', 'Rage', 'Annoying', 'Annoying']",tai chi
+KETI_MULTIMODAL_0000000368,"['Rage', 'Anxiety', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage']","['Rage', 'Anxiety', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Annoying']",yawning
+KETI_MULTIMODAL_0000000369,"['Rage', 'Rage', 'Anxiety', 'Rage', 'Rage', 'Rage', 'Rage', 'Sadness', 'Happy', 'Happy', 'Rage', 'Emberrassed']","['Grumbling', 'Rage', 'Stressed', 'Rage', 'Rage', 'Rage', 'Rage', 'Sadness', 'Happy', 'Comfortable', 'Rage', 'Guilty']",crying
+KETI_MULTIMODAL_0000000376,"['Rage', 'Happy', 'Rage', 'Rage', 'Happy', 'Happy']","['Rage', 'Happy', 'Rage', 'Grumbling', 'Happy', 'Comfortable']",singing
+KETI_MULTIMODAL_0000000371,"['Rage', 'Rage', 'Rage', 'Happy', 'Rage', 'Rage', 'Rage']","['Rage', 'Rage', 'Rage', 'Comfortable', 'Rage', 'Rage', 'Grumbling']",crying
+KETI_MULTIMODAL_0000000380,"['Rage', 'Happy', 'Rage']","['Rage', 'Happy', 'Rage']",stretching leg
+KETI_MULTIMODAL_0000000379,"['Rage', 'Emberrassed', 'Rage', 'Rage', 'Anxiety']","['Rage', 'Guilty', 'Grumbling', 'Rage', 'Anxiety']",crying
+KETI_MULTIMODAL_0000000378,"['Rage', 'Anxiety', 'Emberrassed']","['Rage', 'Anxiety', 'Lonely']",beatboxing
+KETI_MULTIMODAL_0000000375,"['Rage', 'Rage']","['Rage', 'Rage']",testifying
+KETI_MULTIMODAL_0000000377,"['Anxiety', 'Happy', 'Happy']","['Scared', 'Happy', 'Happy']",stretching arm
+KETI_MULTIMODAL_0000000373,"['Happy', 'Hurt', 'Anxiety', 'Happy', 'Happy', 'Happy', 'Rage', 'Sadness', 'Happy', 'Rage', 'Happy', 'Rage', 'Happy', 'Emberrassed', 'Rage', 'Sadness', 'Sadness', 'Happy']","['Happy', 'Shocked', 'Scared', 'Confident', 'Comfortable', 'Comfortable', 'Annoying', 'Regretful', 'Happy', 'Grumbling', 'Happy', 'Rage', 'Confident', 'Inferiority', 'Rage', 'Disappointed', 'Sadness', 'Happy']",kissing
+KETI_MULTIMODAL_0000000372,"['Happy', 'Rage']","['Happy', 'Rage']",yoga
+KETI_MULTIMODAL_0000000370,"['Anxiety', 'Hurt', 'Rage', 'Rage', 'Rage', 'Rage']","['Anxiety', 'Hurt', 'Rage', 'Rage', 'Rage', 'Rage']",laughing
+KETI_MULTIMODAL_0000000386,"['Rage', 'Emberrassed', 'Rage', 'Rage', 'Rage', 'Happy']","['Annoying', 'Guilty', 'Rage', 'Rage', 'Rage', 'Happy']",slapping
+KETI_MULTIMODAL_0000000390,"['Emberrassed', 'Rage', 'Happy', 'Happy']","['Guilty', 'Rage', 'Happy', 'Happy']",sword fighting
+KETI_MULTIMODAL_0000000391,"['Sadness', 'Rage', 'Happy', 'Emberrassed', 'Happy']","['Pessimistic', 'Rage', 'Happy', 'Emberrassed', 'Happy']",beatboxing
+KETI_MULTIMODAL_0000000385,"['Rage', 'Rage', 'Anxiety', 'Sadness', 'Sadness', 'Rage', 'Happy']","['Rage', 'Rage', 'Scared', 'Gloomy', 'Sadness', 'Rage', 'Comfortable']",shaking hands
+KETI_MULTIMODAL_0000000387,"['Rage', 'Anxiety', 'Rage', 'Rage', 'Rage']","['Grumbling', 'Scared', 'Rage', 'Grumbling', 'Rage']",tasting food
+KETI_MULTIMODAL_0000000384,"['Happy', 'Rage', 'Rage', 'Happy', 'Rage', 'Sadness', 'Anxiety', 'Rage', 'Sadness', 'Rage', 'Sadness', 'Rage', 'Happy']","['Happy', 'Rage', 'Grumbling', 'Happy', 'Rage', 'Regretful', 'Stressed', 'Rage', 'Sadness', 'Rage', 'Pessimistic', 'Rage', 'Grateful']",singing
+KETI_MULTIMODAL_0000000388,"['Hurt', 'Sadness', 'Rage', 'Anxiety', 'Rage', 'Rage', 'Rage', 'Sadness', 'Rage', 'Hurt', 'Rage', 'Rage']","['Envy', 'Disappointed', 'Rage', 'Scared', 'Rage', 'Annoying', 'Rage', 'Disappointed', 'Rage', 'Hurt', 'Grumbling', 'Rage']",fixing hair
+KETI_MULTIMODAL_0000000395,"['Rage', 'Rage', 'Rage', 'Happy', 'Hurt']","['Rage', 'Rage', 'Rage', 'Happy', 'Hurt']",beatboxing
+KETI_MULTIMODAL_0000000394,"['Rage', 'Anxiety']","['Rage', 'Anxiety']",crying
+KETI_MULTIMODAL_0000000389,"['Rage', 'Rage', 'Hurt', 'Rage', 'Happy', 'Rage', 'Happy', 'Rage']","['Rage', 'Rage', 'Envy', 'Rage', 'Happy', 'Rage', 'Confident', 'Rage']",tasting food
+KETI_MULTIMODAL_0000000404,"['Happy', 'Anxiety', 'Anxiety', 'Anxiety', 'Hurt', 'Emberrassed']","['Comfortable', 'Anxiety', 'Scared', 'Anxiety', 'Unfair', 'Guilty']",texting
+KETI_MULTIMODAL_0000000397,"['Emberrassed', 'Anxiety', 'Rage', 'Happy', 'Anxiety', 'Anxiety', 'Rage', 'Anxiety', 'Rage', 'Rage', 'Rage', 'Happy', 'Happy']","['Inferiority', 'Anxiety', 'Rage', 'Happy', 'Anxiety', 'Anxiety', 'Rage', 'Stressed', 'Rage', 'Rage', 'Annoying', 'Happy', 'Happy']",beatboxing
+KETI_MULTIMODAL_0000000401,"['Rage', 'Rage', 'Rage']","['Rage', 'Annoying', 'Annoying']",dining
+KETI_MULTIMODAL_0000000399,"['Happy', 'Sadness', 'Sadness']","['Happy', 'Regretful', 'Disappointed']",massaging person's head
+KETI_MULTIMODAL_0000000400,"['Rage', 'Sadness', 'Happy', 'Happy', 'Rage', 'Rage', 'Rage', 'Happy', 'Emberrassed', 'Anxiety']","['Rage', 'Disappointed', 'Happy', 'Confident', 'Annoying', 'Rage', 'Annoying', 'Happy', 'Lonely', 'Scared']",crying
+KETI_MULTIMODAL_0000000408,"['Happy', 'Rage']","['Happy', 'Rage']",eating burger
+KETI_MULTIMODAL_0000000398,"['Anxiety', 'Rage']","['Baffling', 'Rage']",tasting food
+KETI_MULTIMODAL_0000000403,"['Hurt', 'Rage', 'Rage', 'Anxiety', 'Hurt', 'Sadness', 'Happy', 'Hurt', 'Rage', 'Sadness']","['Hurt', 'Rage', 'Rage', 'Stressed', 'Unfair', 'Regretful', 'Confident', 'Hurt', 'Rage', 'Disappointed']",answering questions
+KETI_MULTIMODAL_0000000409,"['Sadness', 'Sadness', 'Rage', 'Happy', 'Rage', 'Happy', 'Rage', 'Rage', 'Rage', 'Happy']","['Sadness', 'Pessimistic', 'Rage', 'Happy', 'Rage', 'Comfortable', 'Rage', 'Annoying', 'Rage', 'Happy']",singing
+KETI_MULTIMODAL_0000000396,"['Rage', 'Happy']","['Rage', 'Happy']",smoking
+KETI_MULTIMODAL_0000000414,"['Happy', 'Rage', 'Anxiety']","['Comfortable', 'Rage', 'Scared']",dining
+KETI_MULTIMODAL_0000000412,"['Rage', 'Happy', 'Rage', 'Hurt', 'Rage', 'Rage', 'Rage', 'Emberrassed']","['Rage', 'Happy', 'Rage', 'Hurt', 'Rage', 'Rage', 'Rage', 'Lonely']",crying
+KETI_MULTIMODAL_0000000421,"['Emberrassed', 'Rage', 'Rage', 'Rage', 'Happy', 'Happy', 'Rage', 'Rage', 'Happy', 'Rage', 'Rage', 'Sadness']","['Guilty', 'Rage', 'Rage', 'Rage', 'Confident', 'Comfortable', 'Annoying', 'Rage', 'Comfortable', 'Rage', 'Rage', 'Regretful']",reading book
+KETI_MULTIMODAL_0000000420,"['Rage', 'Happy', 'Happy', 'Rage', 'Rage', 'Emberrassed']","['Rage', 'Happy', 'Happy', 'Rage', 'Rage', 'Guilty']",building cabinet
+KETI_MULTIMODAL_0000000422,"['Happy', 'Rage', 'Happy', 'Happy']","['Happy', 'Annoying', 'Confident', 'Comfortable']",singing
+KETI_MULTIMODAL_0000000416,"['Rage', 'Rage', 'Rage']","['Rage', 'Rage', 'Rage']",fixing hair
+KETI_MULTIMODAL_0000000415,"['Rage', 'Rage', 'Rage', 'Sadness']","['Rage', 'Annoying', 'Rage', 'Regretful']",playing bagpipes
+KETI_MULTIMODAL_0000000419,"['Rage', 'Rage', 'Rage']","['Annoying', 'Rage', 'Rage']",archery
+KETI_MULTIMODAL_0000000410,"['Rage', 'Rage', 'Happy', 'Rage', 'Sadness', 'Happy', 'Rage', 'Sadness', 'Rage', 'Rage', 'Sadness']","['Rage', 'Rage', 'Happy', 'Rage', 'Disappointed', 'Happy', 'Annoying', 'Sadness', 'Annoying', 'Rage', 'Sadness']",tasting food
+KETI_MULTIMODAL_0000000411,"['Anxiety', 'Happy', 'Rage', 'Emberrassed']","['Anxiety', 'Happy', 'Annoying', 'Guilty']",fixing hair
+KETI_MULTIMODAL_0000000423,"['Happy', 'Hurt']","['Grateful', 'Hurt']",singing
+KETI_MULTIMODAL_0000000439,"['Rage', 'Rage']","['Rage', 'Rage']",dining
+KETI_MULTIMODAL_0000000425,"['Rage', 'Rage', 'Happy', 'Rage', 'Emberrassed', 'Sadness', 'Anxiety', 'Happy', 'Emberrassed', 'Happy', 'Sadness', 'Happy', 'Rage', 'Happy', 'Sadness', 'Hurt', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Hurt']","['Rage', 'Rage', 'Happy', 'Annoying', 'Emberrassed', 'Gloomy', 'Scared', 'Happy', 'Guilty', 'Grateful', 'Gloomy', 'Happy', 'Rage', 'Comfortable', 'Regretful', 'Unfair', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Hurt']",dining
+KETI_MULTIMODAL_0000000427,"['Rage', 'Rage', 'Rage', 'Sadness', 'Rage', 'Anxiety']","['Rage', 'Rage', 'Rage', 'Gloomy', 'Rage', 'Baffling']",crying
+KETI_MULTIMODAL_0000000428,"['Rage', 'Anxiety', 'Sadness']","['Rage', 'Baffling', 'Disappointed']",singing
+KETI_MULTIMODAL_0000000440,"['Rage', 'Rage', 'Rage', 'Sadness', 'Sadness', 'Sadness']","['Grumbling', 'Rage', 'Rage', 'Sadness', 'Sadness', 'Disappointed']",playing monopoly
+KETI_MULTIMODAL_0000000426,"['Rage', 'Sadness', 'Sadness', 'Hurt', 'Rage']","['Rage', 'Sadness', 'Sadness', 'Unfair', 'Grumbling']",tasting food
+KETI_MULTIMODAL_0000000429,"['Sadness', 'Rage', 'Hurt', 'Rage', 'Rage', 'Happy', 'Emberrassed', 'Rage', 'Happy']","['Pessimistic', 'Rage', 'Shocked', 'Rage', 'Rage', 'Happy', 'Inferiority', 'Rage', 'Happy']",reading book
+KETI_MULTIMODAL_0000000424,"['Happy', 'Rage']","['Grateful', 'Rage']",using computer
+KETI_MULTIMODAL_0000000430,"['Happy', 'Happy', 'Rage']","['Confident', 'Comfortable', 'Rage']",dining
+KETI_MULTIMODAL_0000000455,"['Happy', 'Happy', 'Emberrassed', 'Rage', 'Happy']","['Happy', 'Happy', 'Inferiority', 'Rage', 'Happy']",tasting food
+KETI_MULTIMODAL_0000000441,"['Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Sadness']","['Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Gloomy']",busking
+KETI_MULTIMODAL_0000000447,"['Rage', 'Emberrassed', 'Rage', 'Rage', 'Hurt', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Emberrassed', 'Sadness', 'Rage', 'Rage', 'Sadness']","['Rage', 'Guilty', 'Rage', 'Rage', 'Hurt', 'Rage', 'Rage', 'Annoying', 'Rage', 'Rage', 'Emberrassed', 'Pessimistic', 'Rage', 'Rage', 'Pessimistic']",news anchoring
+KETI_MULTIMODAL_0000000458,"['Rage', 'Happy', 'Rage', 'Rage', 'Sadness', 'Hurt', 'Rage', 'Happy']","['Rage', 'Happy', 'Rage', 'Rage', 'Sadness', 'Hurt', 'Rage', 'Happy']",tasting food
+KETI_MULTIMODAL_0000000442,"['Happy', 'Rage', 'Rage', 'Rage', 'Hurt', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage']","['Happy', 'Rage', 'Rage', 'Rage', 'Unfair', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Rage']",crying
+KETI_MULTIMODAL_0000000454,"['Rage', 'Anxiety', 'Rage']","['Rage', 'Anxiety', 'Rage']",tasting food
+KETI_MULTIMODAL_0000000453,"['Happy', 'Rage']","['Comfortable', 'Rage']",reading book
+KETI_MULTIMODAL_0000000457,"['Emberrassed', 'Rage']","['Guilty', 'Rage']",beatboxing
+KETI_MULTIMODAL_0000000452,"['Rage', 'Happy', 'Rage', 'Sadness', 'Sadness', 'Rage', 'Rage', 'Anxiety', 'Hurt', 'Rage']","['Rage', 'Happy', 'Rage', 'Sadness', 'Sadness', 'Rage', 'Rage', 'Stressed', 'Unfair', 'Rage']",dining
+KETI_MULTIMODAL_0000000443,"['Emberrassed', 'Sadness']","['Guilty', 'Disappointed']",texting
+KETI_MULTIMODAL_0000000466,"['Rage', 'Happy', 'Rage', 'Rage']","['Rage', 'Happy', 'Rage', 'Rage']",cutting nails
+KETI_MULTIMODAL_0000000461,"['Emberrassed', 'Rage', 'Emberrassed', 'Rage', 'Emberrassed']","['Guilty', 'Rage', 'Guilty', 'Rage', 'Guilty']",crying
+KETI_MULTIMODAL_0000000465,"['Rage', 'Rage', 'Rage', 'Rage', 'Rage', 'Sadness']","['Rage', 'Rage', 'Annoying', 'Annoying', 'Annoying', 'Regretful']",singing
+KETI_MULTIMODAL_0000000464,"['Emberrassed', 'Happy', 'Rage', 'Anxiety', 'Sadness', 'Rage', 'Emberrassed', 'Happy']","['Guilty', 'Happy', 'Rage', 'Anxiety', 'Pessimistic', 'Rage', 'Guilty', 'Confident']",texting
+KETI_MULTIMODAL_0000000459,"['Rage', 'Rage', 'Rage', 'Happy', 'Rage']","['Rage', 'Rage', 'Rage', 'Happy', 'Rage']",moving furniture
+KETI_MULTIMODAL_0000000460,"['Anxiety', 'Rage']","['Baffling', 'Annoying']",answering questions
+KETI_MULTIMODAL_0000000462,"['Rage', 'Rage']","['Rage', 'Annoying']",cleaning shoes

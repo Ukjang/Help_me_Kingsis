@@ -5,6 +5,7 @@ __pycache__/
 pre_files/data/Talk/
 model/
 data/user_video_frame/
+data/multi_dataset/
 # C extensions
 *.so
 
