@@ -49,8 +49,8 @@ def contents_select(filepath, video_name, exist=True):
             if len(sc) >= 10:                                       # 글자수 10개 이상인 대본만 추출
                 lst = [Counter(sc), Counter(stt)]
                 df = pd.DataFrame(lst)
-                acc = (df.isna().sum(axis=1)[0] / len(Counter(sc))) * 100
-                if acc < 5:                                         # 정확도 95% 이상인 대본만 추출
+                acc = df.isna().sum(axis=1)[0] / len(Counter(sc))
+                if acc < 0.05:                                         # 정확도 95% 이상인 대본만 추출
                     validation_lst.append(i)
     else:
         for stt in stt_lst:

@@ -15,4 +15,7 @@ def sentence_generate(text, model=t5_model, tokenizer=t5_tokenizer):
                         early_stopping=True,
                         num_beams=10)
     generated_text = tokenizer.decode(output[0],skip_special_tokens=True, clean_up_tokenization_spaces=True)
+
+    del tokenizer
+    del model
     return generated_text

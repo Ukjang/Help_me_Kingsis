@@ -12,6 +12,8 @@ import pandas as pd
 import numpy as np
 
 model, vocab = get_pytorch_kobert_model()
+model_path = r"C:\Users\lucky\DYKK\model\koBERT_models\model_0714_Ssent_ml250_ep50.pt"
+
 
 class BERTDataset(Dataset):
       def __init__(self, dataset, sent_idx, label_idx, bert_tokenizer, max_len,
@@ -59,7 +61,7 @@ class BERTClassifier(nn.Module):
 
 ####################################################
 
-def kobert_sent(text, vocab, model, model_path):
+def kobert_sent(text, vocab=vocab, model=model, model_path=model_path):
 
   device = torch.device("cuda:0")
   tokenizer = get_tokenizer()
@@ -102,5 +104,6 @@ def kobert_sent(text, vocab, model, model_path):
     out = model(token_ids, valid_length, segment_ids)
     # print('예측감정 :', sent_dict[int(out[0].argmax().cpu().numpy())] , '\n', '실제감정 :', sent_dict[test_label])
     sent_idx_to_dict_list.append(sent_dict[int(out[0].argmax().cpu().numpy())])
-
+    
+    del model
   return sm_sent_big_sent_dict[sent_idx_to_dict_list[0]] , sm_en_dic[sm_sent_big_sent_dict[sent_idx_to_dict_list[0]]] , sent_idx_to_dict_list[0] , sm_en_dic[sent_idx_to_dict_list[0]]

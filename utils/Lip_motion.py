@@ -50,7 +50,7 @@ def extraction_lip_point(img):
         # Scaling
         lip_point_scaling = lip_point_aligning / np.linalg.norm(lip_point_aligning)
 
-    return lip_point
+    return lip_point_scaling
 
 def make_target_dir(video_name, selected_dir):
     video_cap = cv2.VideoCapture('./data/' + video_name + '.mp4')

@@ -45,15 +45,19 @@ def mfcc_visualize(x_sys, y_sys, x_user, y_user):
     plt.scatter(max_y_dif,max_y_dif_y, color='red')
     plt.text(max_y_dif, max_y_dif_y, 'Bad',fontdict=font_2)
     plt.ylim(0.2, 0.8)
-    plt.show()
+    
     plt.savefig('imgs/MFCC.png')
 
 def pronunciation_visualize(p_score):
     c = 20*np.random.randn(6) + p_score
-    labels = ['Chunk Spped', 'Pause Length', 'Nativity', 'Accent', 'Innotation','Prosody']
+    labels_1 = ['Chunk Spped', 'Pause Length', 'Nativity']
+    labels_2 = ['Accent', 'Innotation','Prosody']
 
-    sns.barplot(x=c, y=labels, palette = 'hls', alpha=0.7)
-    plt.savefig('imgs/Pronunciation.png')
+    sns.barplot(x=c[:3], y=labels_1, palette = 'hls', alpha=0.7)
+    plt.savefig('imgs/Pronunciation_1.png')
+
+    sns.barplot(x=c[3:], y=labels_2, palette = 'hls', alpha=0.7)
+    plt.savefig('imgs/Pronunciation_2.png')
 
 def text_recognition_visualize(sys_text, user_text):
     sys_search = sys_text.replace(' ', '')
@@ -89,6 +93,15 @@ def text_recognition_visualize(sys_text, user_text):
         draw.text((20, 50), FRONT, font=fnt, fill=(0,0,0))
 
     img.save('imgs/Text_Recognition.png')
+
+    sllya = f'Correct Syllables : {len(sys_check)-len(incorrect)}/{len(sys_check)}'
+
+    img = Image.new("RGB", (180, 40), (255, 255, 255))
+    draw = ImageDraw.Draw(img)
+
+    draw.text((20, 15), sllya, font=fnt, fill=(0, 0, 0))
+
+    img.save('imgs/Syllables.png')
 
 ##########################################################################
 
@@ -241,7 +254,7 @@ def draw_Lip_Pronunciation_Analysis_graph(lip_point, lip_point_test, condi):
     plt.plot(lipInline_x_test, lipInline_y_test, 'orange')
     plt.axis('off')
 
-    plt.show()
+    
     if condi=='Good':
         plt.savefig('imgs/Best_Lip.png')
     else:
@@ -271,7 +284,6 @@ def lip_visualize(lst):
     plt.scatter(x_max,y_max, color='red')
     plt.text(x_max, y_max, 'Bad',fontdict=font_2)
     plt.ylim([y_min-10, y_max+10])
-    plt.show()
 
     plt.savefig('imgs/Lip_motion.png')
 
