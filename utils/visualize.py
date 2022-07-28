@@ -89,7 +89,6 @@ def text_recognition_visualize(sys_text, user_text):
         draw.text((20, 50), FRONT, font=fnt, fill=(0,0,0))
 
     img.save('imgs/Text_Recognition.png')
-    img.show()
 
 ##########################################################################
 
