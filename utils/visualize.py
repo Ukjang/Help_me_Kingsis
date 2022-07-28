@@ -49,15 +49,16 @@ def mfcc_visualize(x_sys, y_sys, x_user, y_user):
     plt.savefig('imgs/MFCC.png')
 
 def pronunciation_visualize(p_score):
-    c = 20*np.random.randn(6) + p_score
+    c = 20*np.random.randn(3) + p_score
     labels_1 = ['Chunk Spped', 'Pause Length', 'Nativity']
     labels_2 = ['Accent', 'Innotation','Prosody']
+    labels = [labels_1, labels_2]
 
-    sns.barplot(x=c[:3], y=labels_1, palette = 'hls', alpha=0.7)
-    plt.savefig('imgs/Pronunciation_1.png')
-
-    sns.barplot(x=c[3:], y=labels_2, palette = 'hls', alpha=0.7)
-    plt.savefig('imgs/Pronunciation_2.png')
+    for idx, label in zip(range(1, 3),labels):
+        c = (20*np.random.randn(6) + p_score).reshape(2, 3)
+        plt.figure()
+        sns.barplot(x=c[idx-1], y=label, palette=['hls', 'husl'][idx-1], alpha=0.7)
+        plt.savefig(f'imgs/Pronunciation_{idx}.png')
 
 def text_recognition_visualize(sys_text, user_text):
     sys_search = sys_text.replace(' ', '')
@@ -77,9 +78,10 @@ def text_recognition_visualize(sys_text, user_text):
                 ease = ' '.join(user_list[:user_list.index(USER)]+[USER[:IDX]])
                 incorrect.append([ease, ease+STR])
     
-    lines = 'ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ'
+    lines = 'ㅡ' * int(len(sys_text)*0.8)
+    width = len(sys_text) * 12
 
-    img = Image.new("RGB",(430,80), (255,255,255))
+    img = Image.new("RGB",(width,80), (255,255,255))
     draw = ImageDraw.Draw(img)
     
     fnt = ImageFont.truetype(r'C:/windows/fonts/YES24GothicR.ttf', 13)
@@ -260,7 +262,7 @@ def draw_Lip_Pronunciation_Analysis_graph(lip_point, lip_point_test, condi):
     else:
         plt.savefig('imgs/Worst_Lip.png')
 
-def lip_visualize(lst):
+def lip_visualize(video_number, lst):
     y_max = max(lst)
     x_max = lst.index(y_max)
 
@@ -283,7 +285,7 @@ def lip_visualize(lst):
     plt.text(x_min, y_min,'Good',fontdict=font_1)
     plt.scatter(x_max,y_max, color='red')
     plt.text(x_max, y_max, 'Bad',fontdict=font_2)
-    plt.ylim([y_min-10, y_max+10])
+    plt.ylim([0, y_max+0.01])
 
     plt.savefig('imgs/Lip_motion.png')
 
@@ -292,7 +294,7 @@ def lip_visualize(lst):
     num_frame = [min_frame, max_frame]
     condition = ['Good', 'Bad']
     for frame_n, condi in zip(num_frame,condition):
-        img, lip_point = draw_lipline_on_image(f'./data/Study_dir/3th_Study_Dir/{frame_n}.jpg')
+        img, lip_point = draw_lipline_on_image(f'./data/Study_dir/{video_number}th_Study_Dir/{frame_n}.jpg')
         img_test, lip_point_test = draw_lipline_on_image(f'./data/test/{frame_n}.jpg')
 
         draw_Lip_Pronunciation_Analysis_graph(lip_point, lip_point_test, condi=condi)

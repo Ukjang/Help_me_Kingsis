@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>프로젝트</title>
+    <style>
+        td { text-align: center; }
+    </style>
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="{{url_for('static', filename='data/favicon.ico')}}">
+  <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+</head>
+<script>
+    row = document.getElementsByClassName("row")[0]
+    button = document.getElementsByClassName("mr-2")[0]
+    button.onclick = row.display = "none"
+</script>
+<body>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <form action="/video_proc" method="post">
+            <table class="table table-borderless">
+                <tr class="d-flex">
+                    <td class="col-4"></td>
+                    <td class="col-4">
+                    </td>
+                    <td class="col-4"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="button_box">
+                            <button type="button" class="btn btn-danger mr-2" id="record">녹화</button>
+                            <span id="cam" class=""></span>
+                            <button type="button" class="btn btn-dark disabled" id="stop">정지</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" id="td1">
+                        <video autoplay id="webcam" src="" muted></video>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" id="td2"></td>
+                </tr>
+            </table>
+            </form>
+        </div>
+        <div class="col-1"></div>
+        <br>
+    </div>
+    <script src="{{url_for('static', filename='js/video.js', q=23)}}"></script>
+</body>
+</html>

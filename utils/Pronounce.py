@@ -53,11 +53,12 @@ def text_recognition(source, target):
         elif morph in tag_system:
             tag_system.remove(morph)
             cnt += 1
-
-    if (cnt/total) > 1.0:
-        return print(1.0), system_text, user_text
+    score = cnt/total
+    score = score * 120
+    if (score) > 100:
+        return score, system_text, user_text
     else:
-        return cnt/total, system_text, user_text
+        return score, system_text, user_text
 
 def prounce_score(audiofile, system_text):
     data = './data/Audio/api_user_audio.wav'
@@ -90,4 +91,13 @@ def prounce_score(audiofile, system_text):
         body=json.dumps(requestJson)
     )
     
-    return str(response.data,"utf-8")
+    score = str(response.data,"utf-8")
+    score = round(float(score.split(":")[-1][:-3]),2)
+    if score <= 1.0:
+        score = 0
+    elif (score > 1.0) and (score <= 4.0):
+        score * 25
+    elif score >= 4.0:
+        score = 100
+
+    return score

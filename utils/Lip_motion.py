@@ -147,6 +147,8 @@ def lip_motion_analysis(video_idx, target_dir, dir_lst):
             except:
                 pass
         score = (np.sum(sum_lst))/(len(sum_lst))
+
+        score = 100 - (score*3000)
         print(f'입술 분석 결과: {score}')
     else:
         print('원본 영상과 학습자 영상의 프레임 수가 일치하지 않습니다.')

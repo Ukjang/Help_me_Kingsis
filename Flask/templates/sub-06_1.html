@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>프로젝트</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/contents.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/swiper.min.css')}}">
+
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-1.12.4.min.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/common.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/swiper.min.js')}}"></script>
+	
+</head>
+<body>
+	<div id="wrap">
+		  <header>
+			  <div class="logo">
+				  <h1>
+					  Let’s STUDY
+				  </h1>
+			  </div>
+			  <ul class="gnb-layout">
+				  <li>
+					  <p>Full <br />
+						  Video</p>
+				  </li>
+				  <li>
+					  <p>Training <br />
+						  Video</p>
+				  </li>
+				  <li>
+					  <p>Shadowing</p>
+				  </li>
+				  <li class="on">
+					  <p>AI <br />
+						  Couching</p>
+				  </li>
+				  <li>
+					  <p>Learn <br />
+						  More</p>
+				  </li>
+			  </ul>
+		  </header>
+	  <section>
+		  <div>
+			<h1 class="tit">Detailed Score</h1>
+			  <div class="frame-layout w100">
+				  <div style="margin-top: -80px;" class="frame-content col-03 tit-in-content">
+						<div class="photo_container">
+							<ul class="photo_list column">
+								<div class ="photo_list_box">
+									<li class="photo_box">
+										<div class="photo"></div>
+											<div style="position: relative; top: 7%; left: 24%;">
+												<img src="/static/images/sub06_4.png" width="250px">
+											</div>
+											<img src="/static/images/sub06_1.png">
+											<div class="photo_small_box">
+												<div>
+													<img src="/static/images/MFCC.png" height="180px" width="400px">
+												</div>
+											</div>
+									</li>
+									<li class="photo_box">
+										<div class="photo"></div>
+											<div style="position: relative; top: 7%; left: 24%;">
+											<img src="/static/images/sub06_5.png" width="250px">
+											</div>
+											<img src="/static/images/sub06_1.png">
+											<div class="photo_small_box">
+												<div style="position: relative; top: -5px;">
+													<div style="position: relative; left: -6%;">	
+														<img src="/static/images/Best_Lip.png" height="170px" width="250px">
+													</div>
+													<div style="position: relative; left: 42%; top: -50%;">
+														<img src="/static/images/Worst_Lip.png" height="170px" width="250px">	
+													</div>
+												</div>
+											</div>
+									</li>
+								</div>
+								<div class ="photo_list_box">
+									<li class="photo_box">
+										<div class="photo"></div>
+											<img src="/static/images/sub06_1.png">
+											<div class="photo_small_box">
+												<div style="position: relative; top: -8px;">	
+													<!-- <img src="/static/images/sub06_9.png" height="180px" width="400px"> -->
+													<div style="position: relative; top: -16%;">
+														<audio style="height:130px; width:400px;" controls>
+															<source src="/static/images/Dev_video2.mp4" type="audio/wav" >
+														</audio>
+														<audio style="height:60px; width:400px;" controls>
+															<source src="/static/images/raw_video.avi" type="audio/wav" >
+														</audio>
+													</div>
+														<div style="position: relative; top: -22%; left: 84%; height: 70px; width: 70px;">
+															<img src="/static/images/sub06_6.png" height="100%" width="100%">
+																<div style="position: relative; top: -90%;">
+																	<img src="/static/images/txt_test.png" height="100%" width="100%">
+																</div>
+														</div>
+												</div>
+											</div>
+									</li>
+									<li class="photo_box">
+										<div class="photo"></div>
+											<img src="/static/images/sub06_1.png">
+											<div class="photo_small_box">
+												<div style="position: relative; top: -8px;">	
+													<img src="/static/images/sub06_9.png" height="180px" width="400px">
+														<div style="position: relative; top: -20%; left: 85%; height: 70px; width: 70px;">
+															<img src="/static/images/sub06_6.png" height="100%" width="100%">
+																<div style="position: relative; top: -90%;">
+																	<img src="/static/images/txt_test.png" height="100%" width="100%">
+																</div>
+														</div>
+												</div>
+											</div>
+									</li>
+								</div>
+							</ul>
+						</div>
+						<div style="position:absolute; top: 25%; left: 38%;" class="txt-layout2">
+							<button type="button" onclick="location.href='/start7'">
+								<h1>Next</h1>
+							</button>
+					</div>
+			  </div>
+	  </section>
+	</div>
+  </body>
+  </html>
+  

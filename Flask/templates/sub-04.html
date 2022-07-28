@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>프로젝트</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/contents.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/swiper.min.css')}}">
+
+  <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="{{url_for('static', filename='data/favicon.ico')}}">
+  <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script> -->
+
+  <script type="text/javascript" src="static/js/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="static/js/common.js"></script>
+  <script type="text/javascript" src="static/js/swiper.min.js"></script>
+
+</head>
+<body>
+  <div id="wrap">
+		<header>
+			<div class="logo">
+				<h1>
+					Let’s STUDY
+				</h1>
+			</div>
+			<ul class="gnb-layout">
+				<li>
+					<p>Full <br />
+						Video</p>
+				</li>
+				<li>
+					<p>Training <br />
+						Video</p>
+				</li>
+				<li class="on">
+					<p>Shadowing</p>
+				</li>
+				<li>
+					<p>AI <br />
+						Couching</p>
+				</li>
+				<li>
+					<p>Learn <br />
+						More</p>
+				</li>
+			</ul>
+		</header>
+	<section>
+		<div>
+			<div class="frame-layout w100">
+				<div class="frame-content col-02 tit-in-content">
+					<h1>Let’s Shadowing!</h1>
+					<div>
+						<div>
+							<div class="video-layout">
+								<video controls style="width: 100%; height: 100%;">
+									<source src="{{url_for('static', filename='images/Dev_video2.mp4')}}" type="video/mp4">
+								</video>
+							</div>
+							<div class="txt-box">
+								<h1>근데 마장동에서 곱창 먹고 집에 갈때 택시비 빌려간거 만사천팔백원은 안보냈던데?</h1>
+								<p>But you didn't pay 14,800 won for the taxi fare you borrowed when you ate gopchang in Majang-dong.</p>
+							</div>
+						</div>
+						<div class="recording-layout">
+							<div style="position: absolute; top: 20%; left: 50%; transform: translateX(-50%); text-align: center; min-width: 80%;">
+								<h1 style="position: absolute; top: 15%; left: 50%; transform: translateX(-50%); text-align: center; min-width: 80%;">Listen and follow along</h1>
+								<button type="button" id="recording-start" onclick="location.href='/video'"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="img">
+				<div style="position: absolute; top: 30%; left: 50%; height: 150px; width: 300px;">
+					<img src="/static/images/sub04_1.png" width="80%" height="80%">
+						<div style="position: absolute; top: 27%; left: 20%;">
+							<p style="width:100%; height:100%; font-size: 24px;"> 분노, Rage </p>
+						</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>프로젝트</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/contents.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/swiper.min.css')}}">
+
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-1.12.4.min.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/common.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/swiper.min.js')}}"></script>
+
+</head>
+<body>
+  <div id="wrap">
+		<header>
+			<div class="logo">
+				<h1>
+					Let’s STUDY
+				</h1>
+			</div>
+			<ul class="gnb-layout">
+				<li>
+					<p>Full <br />
+						Video</p>
+				</li>
+				<li>
+					<p>Training <br />
+						Video</p>
+				</li>
+				<li>
+					<p>Shadowing</p>
+				</li>
+				<li>
+					<p>AI <br />
+						Couching</p>
+				</li>
+				<li class="on">
+					<p>Learn <br />
+						More</p>
+				</li>
+			</ul>
+		</header>
+	<section>
+		<div>
+			<div class="frame-layout w100">
+				<div class="frame-content col-02 tit-in-content">
+					<h1>Let’s Learn More!</h1>
+					<div>
+						<div>
+							<div class="video-layout">
+								<div style="position: relative; top: 0%; width: 600px; height: 370px; background:#ffff" class="video-layout">
+									<video controls style="position: relative; top: 45%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%;">
+										<source src= "{{url_for('static', filename='images/Dev_video3.mp4')}}" type="video/mp4">
+									</video>
+								</div>
+							</div>
+							<div style="position: relative; top: -10%; width: 600px;" class="txt-box">
+								<h1>이어서 학습하기</h1>
+								<p>미정이가 해준 음식을 백수지가 먹는다.
+								</p>
+							</div>
+						</div>
+						<div>
+							<div class="video-layout">
+								<div style="position: relative; top: 0%; width: 600px; height: 370px; background:#ffff" class="video-layout">
+									<video controls style="position: relative; top: 45%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%;">
+										<source src= "{{url_for('static', filename='images/Dev_video4.mp4')}}" type="video/mp4">
+									</video>
+								</div>
+							</div>
+							<div style="position: relative; top: -10%; width: 600px;" class="txt-box">
+								<h1>Another <😊 Answering questions, Rage> video
+								</h1>
+								<p>라미란이 정환의 방에 들어와 침대에 앉으며 정환에게 묻는다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  </div>
+</body>
+</html>

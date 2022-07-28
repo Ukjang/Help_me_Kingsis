@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>프로젝트</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/contents.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/swiper.min.css')}}">
+
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-1.12.4.min.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/common.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/swiper.min.js')}}"></script>
+
+</head>
+<body>
+  <div id="wrap">
+		<header>
+			<div class="logo">
+				<h1>
+					Let’s STUDY
+				</h1>
+			</div>
+			<ul class="gnb-layout">
+				<li class="on">
+					<p>Full <br />
+						Video</p>
+				</li>
+				<li>
+					<p>Training <br />
+						Video</p>
+				</li>
+				<li>
+					<p>Shadowing</p>
+				</li>
+				<li>
+					<p>AI <br />
+						Couching</p>
+				</li>
+				<li>
+					<p>Learn <br />
+						More</p>
+				</li>
+			</ul>
+		</header>
+	<section>
+		<div>
+			<h1 class="tit">Let’s Eat - 막돼먹은 영애씨</h1>
+			<div class="flex">
+				<div class="img">
+					<div style="position: absolute; top: 120%; left: 10%; height: 150px; width: 300px;">
+						<img src="/static/images/sub02_1.png" width="80%" height="80%">
+							<div style="position: absolute; top: 28%; left: 19%;">
+								<p style="font-size: 20px;">Answering <br/>questions</p>
+							</div>
+					</div>
+				</div>
+				<div class="frame-layout">
+					<div style="position: relative; top: 25%; left: 75%; transform: translate(-50%, -50%);" class="txt-box">
+						<h1>승준이 영애에게 빌려간 돈을 달라고 한다.</h1>
+						<p>Seung-jun asks Young-ae for the money he borrowed.</p>
+					</div>
+					<div class="frame-content">
+						<div>
+							<div style="position: absolute; left: 30%; top: 350px; width: 40%; height: 373px; background:#ffff" class="video-layout">
+								<video controls style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%;">
+									<source src= "{{url_for('static', filename='images/Dev_video.mp4')}}" type="video/mp4">
+								</video>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="position: relative; left: 15%; top: 450px;" class="txt-layout">
+					<div>
+						<button type="button" onclick="location.href='/start3'">
+						<h1>NEXT <br />
+							Let’s Practice
+						</h1>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  </div>
+</body>
+</html>

@@ -126,4 +126,6 @@ def MFCC(source, target, export_dir):
     x_user = np.array(range(len(mfcc_user.mean(axis=0))))
     y_user = np.array(mfcc_user.mean(axis=0).tolist())
 
+    mfcc_score = 100 - mfcc_score
+
     return mfcc_score, x_sys, y_sys, x_user, y_user 
