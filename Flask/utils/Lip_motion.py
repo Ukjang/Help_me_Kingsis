@@ -53,7 +53,7 @@ def extraction_lip_point(img):
     return lip_point_scaling
 
 def make_target_dir(video_name, selected_dir):
-    video_cap = cv2.VideoCapture('./static/' + video_name + '.avi')
+    video_cap = cv2.VideoCapture('./static/' + video_name + '.mp4')
     cnt = 0
     try:
         os.mkdir('./static/test')

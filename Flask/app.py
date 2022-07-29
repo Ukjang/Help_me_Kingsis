@@ -29,7 +29,8 @@ def reg_score(p_score, t_score, mfcc_score, l_score):
 
 def total_infer(video_name, file_path, target_name, target_dir, video_index, source_audio, target_audio, video_num,export_dir, api_sys, api_user, pro_path, sys_text=None, selected_dir=None):
     lst, dialogue = contents_select.contents_select(filepath=file_path, video_name=video_name, exist=True)
-    lets_study, lets_study_lip_lst = contents_select.create_study_dir(video_name, lst, dialogue=dialogue, object=None, exist=True)
+    # lets_study, lets_study_lip_lst = contents_select.create_study_dir(video_name, lst, dialogue=dialogue, object=None, exist=True)
+    lets_study = [4, 6]
     selected_dir = f'./static/Study_Dir/{lets_study[video_index]}th_Study_Dir'
     
     Lip_motion.make_target_dir(target_name, selected_dir)
