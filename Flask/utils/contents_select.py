@@ -92,7 +92,7 @@ def create_study_dir(video_name, lst, dialogue=None, object=None, exist=True):
             print('Directory is already existed')
         
         path = './static/Study_Dir/' + str(i) + 'th_Study_Dir/'
-        ffmpeg_extract_subclip('./static/' + video_name + '.mp4', s, e, path + str(i) + 'th_video.mp4')
+        ffmpeg_extract_subclip('./static/images/' + video_name + '.mp4', s, e, path + str(i) + 'th_video.mp4')
 
         video_cap = cv2.VideoCapture(path + str(i) + 'th_video.mp4')
         cnt = 0

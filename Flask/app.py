@@ -10,7 +10,6 @@ from utils import Frontalize
 from utils import Lip_motion
 from utils import Pronounce
 from utils import recommendar
-from utils import Spleeter
 from utils import visualize
 from utils import Wave
 
@@ -31,14 +30,14 @@ def reg_score(p_score, t_score, mfcc_score, l_score):
 def total_infer(video_name, file_path, target_name, target_dir, video_index, source_audio, target_audio, video_num,export_dir, api_sys, api_user, pro_path, sys_text=None, selected_dir=None):
     lst, dialogue = contents_select.contents_select(filepath=file_path, video_name=video_name, exist=True)
     lets_study, lets_study_lip_lst = contents_select.create_study_dir(video_name, lst, dialogue=dialogue, object=None, exist=True)
-    selected_dir = f'./data/Study_Dir/{lets_study[video_index]}th_Study_Dir'
+    selected_dir = f'./static/Study_Dir/{lets_study[video_index]}th_Study_Dir'
     
     Lip_motion.make_target_dir(target_name, selected_dir)
 
     dir_lst = lets_study
     l_score, l_lst = Lip_motion.lip_motion_analysis(video_index, target_dir, dir_lst)
     
-    Wave.make_wave_file(f'{video_num}th_video', f'./data/Study_Dir/{video_num}th_Study_Dir/')
+    Wave.make_wave_file(f'{video_num}th_video', f'./static/Study_Dir/{video_num}th_Study_Dir/')
     Wave.make_wave_file(videoname=target_name, directory=file_path) 
 
     mfcc_score, x_sys, y_sys, x_user, y_user = Wave.MFCC(source_audio, target_audio, export_dir)
