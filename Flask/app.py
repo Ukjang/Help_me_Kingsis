@@ -115,18 +115,18 @@ def video_proc():
 @app.route("/start5", methods = ['POST', 'GET'])
 def sub_05():
     if request.method == 'GET':
-        file_path = './data/'
-        video_name = 'system_video'
-        target_name = 'user_video'
+        file_path = './static/images/'
+        video_name = 'Dev_video'
+        target_name = 'raw_video'
         video_index = 0
         video_num = 4
-        target_dir = './data/test'
-        source_audio = f'./data/Audio/{video_num}th_video.wav'
-        target_audio = './data/Audio/user_video.wav'
-        export_dir = './data/Audio/'
-        api_sys = './data/Audio/api_system_audio.wav'
-        api_user = './data/Audio/api_user_audio.wav'
-        pro_path = './data/Audio/pronoun.wav'
+        target_dir = './static/test'
+        source_audio = f'./static/images/{video_num}th_video.wav'
+        target_audio = './static/images/user_video.wav'
+        export_dir = './static/images/'
+        api_sys = './static/images/api_system_audio.wav'
+        api_user = './static/images/api_user_audio.wav'
+        pro_path = './static/images/pronoun.wav'
         reg, p_score, t_score, mfcc_score, l_score = total_infer(video_name, file_path, target_name, target_dir, video_index, source_audio, target_audio, video_num,export_dir, api_sys, api_user, pro_path, sys_text=None, selected_dir=None)
         return render_template("sub-05.html")
     else:
