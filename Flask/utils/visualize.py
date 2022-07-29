@@ -46,7 +46,7 @@ def mfcc_visualize(x_sys, y_sys, x_user, y_user):
     plt.text(max_y_dif, max_y_dif_y, 'Bad',fontdict=font_2)
     plt.ylim(0.2, 0.8)
     
-    plt.savefig('imgs/MFCC.png')
+    plt.savefig('static/images/MFCC.png')
 
 def pronunciation_visualize(p_score):
     c = 20*np.random.randn(3) + p_score
@@ -58,7 +58,7 @@ def pronunciation_visualize(p_score):
         c = (20*np.random.randn(6) + p_score).reshape(2, 3)
         plt.figure()
         sns.barplot(x=c[idx-1], y=label, palette=['hls', 'husl'][idx-1], alpha=0.7)
-        plt.savefig(f'imgs/Pronunciation_{idx}.png')
+        plt.savefig(f'static/images/Pronunciation_{idx}.png')
 
 def text_recognition_visualize(sys_text, user_text):
     sys_search = sys_text.replace(' ', '')
@@ -94,7 +94,7 @@ def text_recognition_visualize(sys_text, user_text):
         draw.text((20, 50), STR, font=fnt, fill=(255,0,0)) 
         draw.text((20, 50), FRONT, font=fnt, fill=(0,0,0))
 
-    img.save('imgs/Text_Recognition.png')
+    img.save('static/images/Text_Recognition.png')
 
     sllya = f'Correct Syllables : {len(sys_check)-len(incorrect)}/{len(sys_check)}'
 
@@ -103,7 +103,7 @@ def text_recognition_visualize(sys_text, user_text):
 
     draw.text((20, 15), sllya, font=fnt, fill=(0, 0, 0))
 
-    img.save('imgs/Syllables.png')
+    img.save('static/images/Syllables.png')
 
 ##########################################################################
 
@@ -258,9 +258,9 @@ def draw_Lip_Pronunciation_Analysis_graph(lip_point, lip_point_test, condi):
 
     
     if condi=='Good':
-        plt.savefig('imgs/Best_Lip.png')
+        plt.savefig('static/images/Best_Lip.png')
     else:
-        plt.savefig('imgs/Worst_Lip.png')
+        plt.savefig('static/images/Worst_Lip.png')
 
 def lip_visualize(video_number, lst):
     y_max = max(lst)
@@ -287,7 +287,7 @@ def lip_visualize(video_number, lst):
     plt.text(x_max, y_max, 'Bad',fontdict=font_2)
     plt.ylim([0, y_max+0.01])
 
-    plt.savefig('imgs/Lip_motion.png')
+    plt.savefig('static/images/Lip_motion.png')
 
     min_frame, max_frame = x_min * 10, x_max * 10
 
@@ -310,4 +310,4 @@ def radar_visualize(p_score, t_score, mfcc_score, l_score):
     fig.update_polars(angularaxis_rotation=135)
     fig.show()
 
-    fig.write_image("imgs/RADAR.png")
+    fig.write_image("static/images/RADAR.png")

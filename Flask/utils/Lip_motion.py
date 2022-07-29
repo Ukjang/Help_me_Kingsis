@@ -53,30 +53,30 @@ def extraction_lip_point(img):
     return lip_point_scaling
 
 def make_target_dir(video_name, selected_dir):
-    video_cap = cv2.VideoCapture('./data/' + video_name + '.mp4')
+    video_cap = cv2.VideoCapture('./static/' + video_name + '.avi')
     cnt = 0
     try:
-        os.mkdir('./data/test')
+        os.mkdir('./static/test')
     except:
         pass
         print('Directory is already existed')
     try:
         while video_cap.isOpened():
             ret, img = video_cap.read()
-            cv2.imwrite('./data/test/' + '%d.jpg' % cnt, img)
+            cv2.imwrite('./static/test/' + '%d.jpg' % cnt, img)
             cnt += 1
     except:
         video_cap.release()
 
     select_frames = len(glob(selected_dir + '/*.jpg'))
-    if len(os.listdir('./data/test')) > select_frames:
-        while len(os.listdir('./data/test')) != select_frames:
+    if len(os.listdir('./static/test')) > select_frames:
+        while len(os.listdir('./static/test')) != select_frames:
             cnt -= 1
-            os.remove(f"./data/test/{cnt}.jpg")
-    elif len(os.listdir('./data/test')) < select_frames:
-        while len(os.listdir('./data/test')) != select_frames:
+            os.remove(f"./static/test/{cnt}.jpg")
+    elif len(os.listdir('./static/test')) < select_frames:
+        while len(os.listdir('./static/test')) != select_frames:
             gray_img = np.empty((240, 320), dtype=np.uint8)
-            cv2.imwrite('./data/test/' + '%d.jpg' % cnt, gray_img)
+            cv2.imwrite('./static/test/' + '%d.jpg' % cnt, gray_img)
             cnt += 1
     else:
         pass
@@ -85,19 +85,19 @@ def make_target_dir(video_name, selected_dir):
 def lip_motion_analysis(video_idx, target_dir, dir_lst):
     # video index directory 이미지 추출
     dir_index = dir_lst[video_idx]
-    dir_path = f'./data/Study_Dir/{dir_index}th_Study_Dir/'
+    dir_path = f'./static/Study_Dir/{dir_index}th_Study_Dir/'
     imgs = sorted(glob(dir_path+'*.jpg'), key=os.path.getctime)
     # 추출된 이미지를 정면화
     model3D = Frontalize.ThreeD_Model('./model/Lip_motion/model3Ddlib.mat', 'model_dlib')
     cnt = 0
     try:
-        os.mkdir(f'./data/Study_Dir/{dir_index}th_Study_Dir/frontal')
+        os.mkdir(f'./static/Study_Dir/{dir_index}th_Study_Dir/frontal')
     except:
         pass
         print('Directory is already existed')
 
     for img in imgs:
-        if len(imgs) == len(os.listdir(f'./data/Study_Dir/{dir_index}th_Study_Dir/frontal')):
+        if len(imgs) == len(os.listdir(f'./static/Study_Dir/{dir_index}th_Study_Dir/frontal')):
             print('Frames are already existed')
             break
         try:
@@ -111,13 +111,13 @@ def lip_motion_analysis(video_idx, target_dir, dir_lst):
             new_img = frontal_sym[:,:,::-1]
         # error 발생 시, 기존의 img로 저장
         # 현재 색상과 사이즈를 바꾸는 것을 기존 색상과 사이즈로 저장하도록 변경
-            cv2.imwrite(f'./data/Study_Dir/{dir_index}th_Study_Dir/frontal/' + '%d.jpg' %cnt, new_img)
+            cv2.imwrite(f'./static/Study_Dir/{dir_index}th_Study_Dir/frontal/' + '%d.jpg' %cnt, new_img)
             cnt += 1
         except:
-            cv2.imwrite(f'./data/Study_Dir/{dir_index}th_Study_Dir/frontal/' + '%d.jpg' %cnt, img)
+            cv2.imwrite(f'./static/Study_Dir/{dir_index}th_Study_Dir/frontal/' + '%d.jpg' %cnt, img)
 
     # 정면화된 이미지에서 입술 랜드마크 검출
-    target_frames = sorted(glob(f'./data/Study_Dir/{dir_index}th_Study_Dir/frontal/' + '*.jpg'), key=os.path.getctime)
+    target_frames = sorted(glob(f'./static/Study_Dir/{dir_index}th_Study_Dir/frontal/' + '*.jpg'), key=os.path.getctime)
     lip_point_target = []
     for i in range(0, len(target_frames), 10):
         lip_point = extraction_lip_point(target_frames[i])

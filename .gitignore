@@ -6,6 +6,8 @@ pre_files/data/Talk/
 model/
 data/user_video_frame/
 data/multi_dataset/
+Flask/model/
+Flask/static/multi_dataset/
 # C extensions
 *.so
 

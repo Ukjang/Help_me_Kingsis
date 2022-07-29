@@ -10,7 +10,7 @@ def down_sample(input_wav, origin_sr, resample_sr):
     y, sr = librosa.load(input_wav, sr=origin_sr)
     resample = librosa.resample(y, sr, resample_sr)
     print("original wav sr: {}, original wav shape: {}, resample wav sr: {}, resmaple shape: {}".format(origin_sr, y.shape, resample_sr, resample.shape))
-    sf.write('./data/Audio/' + 'pronoun.wav', resample, resample_sr, format='WAV', endian='LITTLE', subtype='PCM_16')
+    sf.write('./static/images/' + 'pronoun.wav', resample, resample_sr, format='WAV', endian='LITTLE', subtype='PCM_16')
 
 
 def text_recognition(source, target):
@@ -61,7 +61,7 @@ def text_recognition(source, target):
         return score, system_text, user_text
 
 def prounce_score(audiofile, system_text):
-    data = './data/Audio/api_user_audio.wav'
+    data = './static/images/api_user_audio.wav'
     down_sample(data, 22050, 16000)
 
     openApiURL = "http://aiopen.etri.re.kr:8000/WiseASR/PronunciationKor"

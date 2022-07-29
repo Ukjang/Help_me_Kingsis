@@ -2,20 +2,59 @@ from flask import Flask, render_template, request, redirect
 from flask import current_app, make_response, url_for, flash
 import cv2
 import flask
+import numpy as np
 import urllib3, json, base64
 from utils import CLOVA
 from utils import contents_select
 from utils import Frontalize
-from utils import koBERT
 from utils import Lip_motion
 from utils import Pronounce
 from utils import recommendar
 from utils import Spleeter
-from utils import T5
-from utils import Timesformer
 from utils import visualize
 from utils import Wave
 
+def reg_score(p_score, t_score, mfcc_score, l_score):
+    sc_list = [p_score, t_score, mfcc_score, l_score]
+    sc_list = np.array(sc_list)
+    sc_mean = np.mean(sc_list)
+    sc_std = np.std(sc_list)
+    total_score = []
+    for sc in sc_list:
+        if abs(float(sc)-sc_mean) >= sc_std :
+            total_score.append(sc_mean)
+        else :
+            total_score.append(sc)
+    reg = np.mean(np.array(total_score))
+    return reg
+
+def total_infer(video_name, file_path, target_name, target_dir, video_index, source_audio, target_audio, video_num,export_dir, api_sys, api_user, pro_path, sys_text=None, selected_dir=None):
+    lst, dialogue = contents_select.contents_select(filepath=file_path, video_name=video_name, exist=True)
+    lets_study, lets_study_lip_lst = contents_select.create_study_dir(video_name, lst, dialogue=dialogue, object=None, exist=True)
+    selected_dir = f'./data/Study_Dir/{lets_study[video_index]}th_Study_Dir'
+    
+    Lip_motion.make_target_dir(target_name, selected_dir)
+
+    dir_lst = lets_study
+    l_score, l_lst = Lip_motion.lip_motion_analysis(video_index, target_dir, dir_lst)
+    
+    Wave.make_wave_file(f'{video_num}th_video', f'./data/Study_Dir/{video_num}th_Study_Dir/')
+    Wave.make_wave_file(videoname=target_name, directory=file_path) 
+
+    mfcc_score, x_sys, y_sys, x_user, y_user = Wave.MFCC(source_audio, target_audio, export_dir)
+
+    t_score, sys_text, user_text = Pronounce.text_recognition(api_sys, api_user)
+    p_score = Pronounce.prounce_score(pro_path, sys_text)
+
+    visualize.mfcc_visualize(x_sys, y_sys, x_user, y_user)
+    visualize.pronunciation_visualize(p_score)
+    visualize.text_recognition_visualize(sys_text, user_text)
+    visualize.lip_visualize(video_num, l_lst)
+    visualize.radar_visualize(p_score, t_score, mfcc_score, l_score)
+
+    reg = reg_score(p_score, t_score, mfcc_score, l_score)
+
+    return reg, p_score, t_score, mfcc_score, l_score
 
 app = Flask(__name__)
 
@@ -76,9 +115,22 @@ def video_proc():
 @app.route("/start5", methods = ['POST', 'GET'])
 def sub_05():
     if request.method == 'GET':
+        file_path = './data/'
+        video_name = 'system_video'
+        target_name = 'user_video'
+        video_index = 0
+        video_num = 4
+        target_dir = './data/test'
+        source_audio = f'./data/Audio/{video_num}th_video.wav'
+        target_audio = './data/Audio/user_video.wav'
+        export_dir = './data/Audio/'
+        api_sys = './data/Audio/api_system_audio.wav'
+        api_user = './data/Audio/api_user_audio.wav'
+        pro_path = './data/Audio/pronoun.wav'
+        reg, p_score, t_score, mfcc_score, l_score = total_infer(video_name, file_path, target_name, target_dir, video_index, source_audio, target_audio, video_num,export_dir, api_sys, api_user, pro_path, sys_text=None, selected_dir=None)
         return render_template("sub-05.html")
     else:
-        
+        return    
 @app.route("/start6")
 def sub_06():
     return render_template("sub-06.html")

@@ -13,12 +13,12 @@ from scipy.interpolate import make_interp_spline, BSpline
 
 def make_wave_file(videoname, directory):
     try:
-        os.mkdir('./data/Audio')
+        os.mkdir('./static/images')
     except:
         print('Directory is already existed')
         pass
     audiosegment = AudioSegment.from_file(directory + videoname+'.mp4')
-    audiosegment.export('./data/Audio/' +videoname +'.wav', format='wav')
+    audiosegment.export('./static/images/' +videoname +'.wav', format='wav')
 
 # sound is original video to wav file
 def detect_leading_silence(sound, silence_threshold=-40.0, chunk_size=10):

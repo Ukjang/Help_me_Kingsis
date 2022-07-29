@@ -80,19 +80,19 @@ def create_study_dir(video_name, lst, dialogue=None, object=None, exist=True):
             e = e/1000
 
         try:
-            os.mkdir('./data/Study_Dir')
+            os.mkdir('./static/Study_Dir')
         except:
             pass
             print('Directory is already existed')
 
         try:
-            os.mkdir('./data/Study_Dir/' + str(i) + 'th_Study_Dir')
+            os.mkdir('./static/Study_Dir/' + str(i) + 'th_Study_Dir')
         except:
             pass
             print('Directory is already existed')
         
-        path = './data/Study_Dir/' + str(i) + 'th_Study_Dir/'
-        ffmpeg_extract_subclip('./data/' + video_name + '.mp4', s, e, path + str(i) + 'th_video.mp4')
+        path = './static/Study_Dir/' + str(i) + 'th_Study_Dir/'
+        ffmpeg_extract_subclip('./static/' + video_name + '.mp4', s, e, path + str(i) + 'th_video.mp4')
 
         video_cap = cv2.VideoCapture(path + str(i) + 'th_video.mp4')
         cnt = 0

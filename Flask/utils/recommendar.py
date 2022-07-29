@@ -67,7 +67,7 @@ def video_rec(sent_token, act_token, data):
 def video_infos(rec_list):
     dscript_lst = []
     for name in rec_list:
-        json_object = json.load(open(f'./data/multi_dataset/{name}/{name}_interpolation.json', encoding='utf-8'))
+        json_object = json.load(open(f'./static/multi_dataset/{name}/{name}_interpolation.json', encoding='utf-8'))
         dscript = json_object['common_info']['clip_descs'][0]
         dscript_lst.append(dscript)
     return dscript_lst
