@@ -74,8 +74,8 @@ urllib3==1.26.11
 ![image](https://user-images.githubusercontent.com/77912242/181652502-1daccad8-e4b1-4d88-9ae0-fc0c1ab4bf27.png)
 
 #### Results
-![image]
-
+![result_1](./imgs/git_hub.png)
+![result_2](./imgs/git_hub_2.png)
 #### Works cited
 BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
 - Jacob / Devlin / Ming-Wei Chang / Kenton Lee / Kristina Toutanova
